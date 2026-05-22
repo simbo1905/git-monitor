@@ -2,6 +2,8 @@
 
 Tiny LuaJIT wrapper around GitHub CLI for brute-force GitHub Actions polling.
 
+The skill lives in `gh_monitor/`.
+
 ## Why
 
 Sometimes `gh` watch flows are not good enough operationally. The failure mode is a long blind sleep, then a stale refresh after the job finished ages ago.
@@ -17,14 +19,14 @@ Sometimes `gh` watch flows are not good enough operationally. The failure mode i
 ## Install
 
 ```sh
-chmod +x gh_monitor/git-monitor
+chmod +x gh_monitor/git-monitor.lua
 export PATH="$PWD/gh_monitor:$PATH"
 ```
 
-Then use it as a git-style subcommand:
+Invoke it directly from the skill folder:
 
 ```sh
-git monitor run <run-id> --repo owner/repo
+luajit gh_monitor/git-monitor.lua run <run-id> --repo owner/repo
 ```
 
 ## Usage
@@ -32,7 +34,7 @@ git monitor run <run-id> --repo owner/repo
 ### Watch one run
 
 ```sh
-git monitor run 26059219391 \
+luajit gh_monitor/git-monitor.lua run 26059219391 \
   --repo livemorecapital/livemore-pricing-engine \
   --interval 15 \
   --soft-deadline 480 \
@@ -42,7 +44,7 @@ git monitor run 26059219391 \
 ### Watch PR checks
 
 ```sh
-git monitor pr-checks 389 \
+luajit gh_monitor/git-monitor.lua pr-checks 389 \
   --repo livemorecapital/livemore-pricing-engine \
   --interval 15 \
   --soft-deadline 480 \
