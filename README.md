@@ -20,7 +20,6 @@ Sometimes `gh` watch flows are not good enough operationally. The failure mode i
 
 ```sh
 chmod +x gh_monitor/git-monitor.lua
-export PATH="$PWD/gh_monitor:$PATH"
 ```
 
 Invoke it with `luajit` from the repository root:
