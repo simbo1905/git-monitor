@@ -1,6 +1,6 @@
 ---
 name: gh-actions-poll
-description: Brute-force GitHub Actions monitoring that polls fresh `gh` state until a run or PR checks finish, fail, or cross operator deadlines.
+description: Brute-force GitHub Actions monitoring that polls fresh `gh` state until a run completes, PR checks fail, or operator deadlines are crossed.
 ---
 
 # GH Actions Poll
