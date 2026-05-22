@@ -1,6 +1,6 @@
 ---
 name: gh-actions-poll
-description: Brute-force GitHub Actions monitoring that polls fresh `gh` state until a run or PR checks finish, fail, or cross operator deadlines.
+description: Brute-force GitHub Actions monitoring that polls fresh `gh` state until a run completes, PR checks fail, or operator deadlines are crossed.
 ---
 
 # GH Actions Poll
@@ -9,12 +9,12 @@ Use this when `gh ... --watch` is not trustworthy enough and you need a blocking
 
 ## Tool
 
-`gh_monitor/git-monitor`
+`luajit gh_monitor/git-monitor.lua`
 
 Examples:
 
 ```sh
-gh_monitor/git-monitor run 26059219391 \
+luajit gh_monitor/git-monitor.lua run 26059219391 \
   --repo livemorecapital/livemore-pricing-engine \
   --interval 15 \
   --soft-deadline 480 \
@@ -22,7 +22,7 @@ gh_monitor/git-monitor run 26059219391 \
 ```
 
 ```sh
-gh_monitor/git-monitor pr-checks 389 \
+luajit gh_monitor/git-monitor.lua pr-checks 389 \
   --repo livemorecapital/livemore-pricing-engine \
   --interval 15 \
   --soft-deadline 480 \
