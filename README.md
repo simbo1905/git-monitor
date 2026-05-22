@@ -23,7 +23,7 @@ chmod +x gh_monitor/git-monitor.lua
 export PATH="$PWD/gh_monitor:$PATH"
 ```
 
-Invoke it directly from the skill folder:
+Invoke it with `luajit` from the repository root:
 
 ```sh
 luajit gh_monitor/git-monitor.lua run <run-id> --repo owner/repo

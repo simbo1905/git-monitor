@@ -9,7 +9,7 @@ Use this when `gh ... --watch` is not trustworthy enough and you need a blocking
 
 ## Tool
 
-`gh_monitor/git-monitor.lua`
+`luajit gh_monitor/git-monitor.lua`
 
 Examples:
 
