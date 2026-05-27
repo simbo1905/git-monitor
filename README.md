@@ -2,6 +2,8 @@
 
 Tiny LuaJIT wrapper around GitHub CLI for brute-force GitHub Actions polling.
 
+Canonical skill/tool contents live in [`gh_monitor/`](gh_monitor/).
+
 ## Why
 
 Sometimes `gh` watch flows are not good enough operationally. The failure mode is a long blind sleep, then a stale refresh after the job finished ages ago.
@@ -14,10 +16,27 @@ Sometimes `gh` watch flows are not good enough operationally. The failure mode i
 - `jq`
 - `luajit`
 
+## Layout
+
+Bundled in [`gh_monitor/`](gh_monitor/):
+
+| File | Role |
+|------|------|
+| [`gh_monitor/SKILL.md`](gh_monitor/SKILL.md) | Skill instructions for agents |
+| [`gh_monitor/git_monitor.lua`](gh_monitor/git_monitor.lua) | Executable LuaJIT polling tool |
+
 ## Install
 
+
+**Codex / Claude skill install:**
+
+```bash
+mkdir -p ~/.codex/skills
+git clone https://github.com/simbo1905/git-monitor.git ~/.codex/skills/gh_monitor
+```
+
 ```sh
-chmod +x gh_monitor/git-monitor
+chmod +x gh_monitor/git_monitor.lua
 export PATH="$PWD/gh_monitor:$PATH"
 ```
 
@@ -26,6 +45,8 @@ Then use it as a git-style subcommand:
 ```sh
 git monitor run <run-id> --repo owner/repo
 ```
+
+Details and operator guidance: [`gh_monitor/SKILL.md`](gh_monitor/SKILL.md).
 
 ## Usage
 
